@@ -1,0 +1,986 @@
+<!doctype html>
+<html lang="zh-Hant">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>GreenHomeLab｜家中栽種蔬果指南與品種資料庫</title>
+  <meta name="description" content="GreenHomeLab 專注於居家陽台／室內蔬果栽培，提供品種資料、種植難度、日照與澆水建議、採收期與常見病蟲害對策。快速搜尋與篩選適合你的蔬果。" />
+  <meta name="keywords" content="居家種菜, 陽台栽培, 室內栽培, 蔬果種植, 香草, 番茄, 辣椒, 葉菜, 種植指南, 病蟲害" />
+  <meta name="color-scheme" content="light dark" />
+
+  <!-- Open Graph / Twitter -->
+  <meta property="og:title" content="GreenHomeLab｜家中栽種蔬果指南與品種資料庫" />
+  <meta property="og:description" content="用資料與設計，讓居家栽種更簡單：品種資料、難度星級、日照澆水、採收期與病蟲害。" />
+  <meta property="og:image" content="https://yourdomain.github.io/images/og-cover.png" />
+  <meta property="og:url" content="https://yourdomain.github.io/" />
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="GreenHomeLab" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="GreenHomeLab｜家中栽種蔬果指南" />
+  <meta name="twitter:description" content="居家蔬果資料庫：搜尋、篩選、難度與種植建議" />
+  <meta name="twitter:image" content="https://yourdomain.github.io/images/og-cover.png" />
+
+  <!-- Structured Data -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Organization",
+    "name": "GreenHomeLab",
+    "description": "居家栽種蔬果的知識整理與品種資料庫",
+    "url": "https://yourdomain.github.io/",
+    "logo": "https://yourdomain.github.io/images/logo.png",
+    "contactPoint": { "@type": "ContactPoint", "email": "hello@yourdomain.com", "contactType": "customer service" },
+    "sameAs": ["https://www.instagram.com/your-account"]
+  }
+  </script>
+
+  <link rel="canonical" href="https://yourdomain.github.io/" />
+  <link rel="icon" type="image/png" href="images/logo.png" />
+  <link rel="apple-touch-icon" href="images/logo.png" />
+
+  <style>
+    :root{
+      --bg: #0b0d10;
+      --text:#e7eef7;
+      --muted:#9fb0c3;
+      --panel:#121722;
+      --card:#0f1420;
+      --ring:#22304a;
+      --brand:#21c48c;
+      --warn:#f3c96a;
+      --danger:#dc3545;
+      --shadow: 0 12px 30px rgba(0,0,0,.35);
+      --radius: 16px;
+      --radius-sm: 12px;
+      --max: 1100px;
+      --gap: 16px;
+    }
+    @media (prefers-color-scheme: light){
+      :root{
+        --bg:#f7fafc;
+        --text:#0b1220;
+        --muted:#516173;
+        --panel:#ffffff;
+        --card:#ffffff;
+        --ring:#e6edf5;
+        --shadow: 0 12px 28px rgba(11,18,32,.08);
+      }
+    }
+
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{
+      margin:0;
+      font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto,
+                   "Noto Sans TC", "PingFang TC", "Microsoft JhengHei", Arial, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+    }
+    a{color:inherit}
+    .container{max-width:var(--max); margin:0 auto; padding: 0 18px;}
+    .nav{
+      display:flex; align-items:center; gap: 14px;
+      padding: 14px 0;
+    }
+    header{
+      position: sticky; top:0; z-index: 20;
+      background: color-mix(in srgb, var(--bg) 85%, transparent);
+      backdrop-filter: blur(10px);
+      border-bottom: 1px solid var(--ring);
+    }
+    .brand{
+      display:flex; align-items:center; gap: 10px;
+      font-weight: 700;
+      letter-spacing: .2px;
+    }
+    .logo{
+      width: 34px; height: 34px; border-radius: 10px;
+      background: linear-gradient(135deg, color-mix(in srgb, var(--brand) 40%, transparent), transparent);
+      display:grid; place-items:center;
+      overflow:hidden;
+      border:1px solid var(--ring);
+    }
+    .logo img{width:100%; height:100%; object-fit:cover}
+    nav.top{
+      margin-left:auto; display:flex; gap: 10px; flex-wrap:wrap;
+    }
+    nav.top a{
+      text-decoration:none;
+      padding: 8px 10px;
+      border-radius: 10px;
+      border: 1px solid transparent;
+      color: var(--muted);
+    }
+    nav.top a:hover{
+      border-color: var(--ring);
+      background: color-mix(in srgb, var(--panel) 70%, transparent);
+      color: var(--text);
+    }
+
+    main{padding: 22px 0 34px;}
+    .hero{
+      background: radial-gradient(900px 500px at 20% 10%, color-mix(in srgb, var(--brand) 25%, transparent), transparent),
+                  radial-gradient(900px 500px at 80% 30%, color-mix(in srgb, var(--warn) 18%, transparent), transparent);
+      border: 1px solid var(--ring);
+      border-radius: var(--radius);
+      padding: 26px;
+      box-shadow: var(--shadow);
+    }
+    .hero h1{margin:0 0 10px; font-size: clamp(26px, 3.2vw, 40px); line-height:1.15;}
+    .hero p{margin:0 0 16px; color: var(--muted); max-width: 60ch;}
+    .social-links{list-style:none; margin: 0 0 18px; padding:0; display:flex; gap: 10px; flex-wrap:wrap;}
+    .social-link{
+      display:inline-flex; align-items:center; gap: 8px;
+      text-decoration:none;
+      padding: 10px 12px;
+      border-radius: 12px;
+      border:1px solid var(--ring);
+      background: color-mix(in srgb, var(--panel) 78%, transparent);
+    }
+    .social-link:hover{border-color: color-mix(in srgb, var(--brand) 55%, var(--ring));}
+    .social-icon{width:18px; height:18px; fill: currentColor; opacity: .9;}
+
+    .stats{
+      display:grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 12px;
+      margin-top: 8px;
+    }
+    @media (max-width: 860px){
+      .stats{grid-template-columns: repeat(2, minmax(0, 1fr));}
+    }
+    .stat-item{
+      border:1px solid var(--ring);
+      background: color-mix(in srgb, var(--panel) 78%, transparent);
+      border-radius: 14px;
+      padding: 14px;
+      min-height: 72px;
+    }
+    .stat-number{font-weight: 800; font-size: 22px;}
+    .stat-label{color: var(--muted); font-size: 13px; margin-top: 4px;}
+
+    .quick-nav{
+      margin-top: 16px;
+      display:grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 12px;
+    }
+    @media (max-width: 860px){
+      .quick-nav{grid-template-columns: 1fr;}
+    }
+    .quick-nav-item{
+      text-decoration:none;
+      border: 1px solid var(--ring);
+      border-radius: 14px;
+      background: color-mix(in srgb, var(--card) 85%, transparent);
+      padding: 14px;
+    }
+    .quick-nav-item:hover{
+      border-color: color-mix(in srgb, var(--brand) 55%, var(--ring));
+      transform: translateY(-1px);
+      transition: transform .15s ease;
+    }
+    .quick-nav-title{font-weight: 750;}
+    .quick-nav-desc{color: var(--muted); font-size: 14px; margin-top: 6px;}
+
+    .toolbar{
+      margin-top: 18px;
+      display:flex; align-items:center; gap: 10px; flex-wrap:wrap;
+      border: 1px solid var(--ring);
+      border-radius: var(--radius);
+      padding: 12px;
+      background: color-mix(in srgb, var(--panel) 75%, transparent);
+    }
+    .search-container{
+      position: relative;
+      min-width: min(520px, 100%);
+      flex: 1 1 320px;
+    }
+    .search-input{
+      width:100%;
+      padding: 12px 38px 12px 14px;
+      border-radius: 12px;
+      border: 1px solid var(--ring);
+      background: color-mix(in srgb, var(--card) 90%, transparent);
+      color: var(--text);
+      outline:none;
+    }
+    .search-input:focus{border-color: color-mix(in srgb, var(--brand) 55%, var(--ring));}
+    .search-icon{
+      position:absolute; right: 12px; top: 50%;
+      transform: translateY(-50%);
+      width: 18px; height: 18px;
+      fill: var(--muted);
+      pointer-events:none;
+    }
+    .search-suggestions{
+      position:absolute; left:0; right:0; top: calc(100% + 8px);
+      background: var(--panel);
+      border: 1px solid var(--ring);
+      border-radius: 12px;
+      overflow:hidden;
+      display:none;
+      box-shadow: var(--shadow);
+      z-index: 10;
+    }
+    .suggestion{
+      padding: 10px 12px;
+      cursor:pointer;
+      border-top: 1px solid color-mix(in srgb, var(--ring) 60%, transparent);
+    }
+    .suggestion:hover{background: color-mix(in srgb, var(--brand) 10%, transparent);}
+
+    select{
+      padding: 10px 12px;
+      border-radius: 12px;
+      border:1px solid var(--ring);
+      background: color-mix(in srgb, var(--card) 90%, transparent);
+      color: var(--text);
+      outline:none;
+    }
+    .btn{
+      display:inline-flex; align-items:center; justify-content:center; gap: 8px;
+      padding: 10px 12px;
+      border-radius: 12px;
+      border: 1px solid var(--ring);
+      background: color-mix(in srgb, var(--card) 90%, transparent);
+      text-decoration:none;
+      cursor:pointer;
+      user-select:none;
+      white-space: nowrap;
+    }
+    .btn.primary{
+      border-color: color-mix(in srgb, var(--brand) 55%, var(--ring));
+      background: color-mix(in srgb, var(--brand) 18%, var(--card));
+    }
+    .chip{
+      padding: 9px 10px;
+      border-radius: 999px;
+      border: 1px solid var(--ring);
+      background: color-mix(in srgb, var(--card) 90%, transparent);
+      cursor:pointer;
+    }
+    .chip[aria-pressed="true"]{
+      border-color: color-mix(in srgb, var(--brand) 55%, var(--ring));
+      background: color-mix(in srgb, var(--brand) 15%, var(--card));
+    }
+
+    .section-title{
+      display:flex; align-items:flex-end; justify-content:space-between; gap: 14px;
+      margin: 18px 2px 10px;
+    }
+    .section-title h2{margin:0; font-size: 22px;}
+    .count{color: var(--muted); font-size: 14px;}
+
+    .category-tabs{
+      display:flex; gap: 8px; flex-wrap:wrap;
+      margin-top: 14px;
+    }
+    .tab{
+      padding: 9px 10px;
+      border-radius: 999px;
+      border: 1px solid var(--ring);
+      background: color-mix(in srgb, var(--card) 90%, transparent);
+      cursor:pointer;
+    }
+    .tab[aria-selected="true"]{
+      border-color: color-mix(in srgb, var(--brand) 55%, var(--ring));
+      background: color-mix(in srgb, var(--brand) 15%, var(--card));
+    }
+
+    .grid{
+      display:grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 14px;
+      margin-top: 12px;
+    }
+    @media (max-width: 980px){.grid{grid-template-columns: repeat(2, minmax(0, 1fr));}}
+    @media (max-width: 620px){.grid{grid-template-columns: 1fr;}}
+
+    .card{
+      border: 1px solid var(--ring);
+      border-radius: var(--radius);
+      background: color-mix(in srgb, var(--card) 92%, transparent);
+      overflow:hidden;
+      box-shadow: 0 10px 18px rgba(0,0,0,.18);
+      display:flex; flex-direction:column;
+      min-height: 290px;
+    }
+    .thumb{
+      height: 148px;
+      background: linear-gradient(135deg,
+        color-mix(in srgb, var(--brand) 18%, transparent),
+        color-mix(in srgb, var(--warn) 14%, transparent)
+      );
+      display:grid; place-items:center;
+      border-bottom: 1px solid var(--ring);
+      position: relative;
+    }
+    .thumb img{width:100%; height:100%; object-fit:cover; display:block;}
+    .ph{color: var(--muted); font-size: 14px;}
+    .badge{
+      position:absolute; left: 12px; top: 12px;
+      padding: 6px 8px;
+      border-radius: 999px;
+      border:1px solid var(--ring);
+      background: color-mix(in srgb, var(--panel) 75%, transparent);
+      font-size: 12px;
+      color: var(--muted);
+    }
+    .card-body{padding: 14px;}
+    .latin{font-weight: 800; letter-spacing: .2px;}
+    .cn{color: var(--muted); margin-top: 2px;}
+    .meta{margin-top: 10px; color: var(--muted); font-size: 14px;}
+    .row{margin-top: 8px; font-size: 14px;}
+    .row b{color: var(--text);}
+    .buy{margin-top: 12px; display:flex; gap: 10px; flex-wrap:wrap;}
+    .buy .btn{flex: 1 1 auto;}
+    .buy .btn.secondary{color: var(--muted);}
+
+    /* Guide cards */
+    .guide-wrap{margin-top: 26px;}
+    .guide-grid{
+      display:grid;
+      grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+      gap: 14px;
+      margin-top: 12px;
+    }
+    .guide-card{
+      background: color-mix(in srgb, var(--panel) 78%, transparent);
+      padding: 18px;
+      border-radius: 14px;
+      border: 1px solid var(--ring);
+    }
+    .guide-card h3{margin: 0 0 10px; display:flex; align-items:center; gap: 10px;}
+    .pill{
+      font-size: 12px;
+      padding: 4px 8px;
+      border-radius: 999px;
+      border:1px solid var(--ring);
+      color: var(--muted);
+      background: color-mix(in srgb, var(--card) 90%, transparent);
+    }
+    .guide-card p{margin:0; color: var(--muted);}
+    .note-card{
+      margin-top: 14px;
+      background: color-mix(in srgb, var(--card) 90%, transparent);
+      padding: 18px;
+      border-radius: 14px;
+      border: 1px solid var(--ring);
+    }
+    .note-card h3{margin: 0 0 10px;}
+    .note-card ul{margin:0; padding-left: 18px; color: var(--muted);}
+
+    /* Modal */
+    .modal{
+      position: fixed; inset:0;
+      background: rgba(0,0,0,.55);
+      display:none;
+      align-items:center;
+      justify-content:center;
+      padding: 18px;
+      z-index: 50;
+    }
+    .modal[aria-hidden="false"]{display:flex;}
+    .modal-content{
+      width: min(940px, 100%);
+      background: var(--panel);
+      border: 1px solid var(--ring);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      overflow:hidden;
+    }
+    .modal-header{
+      display:flex; justify-content:space-between; align-items:flex-start; gap: 12px;
+      padding: 16px 16px 0;
+    }
+    .modal-title{margin:0;}
+    .modal-subtitle{margin: 6px 0 0; color: var(--muted);}
+    .close-btn{
+      border:none; background: transparent; color: var(--muted);
+      font-size: 28px; line-height:1;
+      cursor:pointer;
+      padding: 6px 10px;
+      border-radius: 12px;
+    }
+    .close-btn:hover{background: color-mix(in srgb, var(--card) 90%, transparent); color: var(--text);}
+    .modal-body{
+      padding: 14px 16px 16px;
+      display:grid;
+      grid-template-columns: 1.15fr .85fr;
+      gap: 14px;
+    }
+    @media (max-width: 860px){.modal-body{grid-template-columns: 1fr;}}
+    .modal-image{
+      width:100%;
+      height: 360px;
+      object-fit: cover;
+      border-radius: 14px;
+      border: 1px solid var(--ring);
+      background: color-mix(in srgb, var(--card) 90%, transparent);
+    }
+    .modal-info{
+      border: 1px solid var(--ring);
+      border-radius: 14px;
+      background: color-mix(in srgb, var(--card) 90%, transparent);
+      padding: 12px;
+      color: var(--muted);
+    }
+    .modal-actions{margin-top: 10px; display:flex; gap: 10px; flex-wrap:wrap;}
+
+    footer{
+      border-top: 1px solid var(--ring);
+      padding: 18px 0 26px;
+      color: var(--muted);
+    }
+    footer a{color: var(--muted); text-decoration:none;}
+    footer a:hover{color: var(--text);}
+    .footer-row{
+      display:flex; justify-content:space-between; align-items:center; flex-wrap:wrap; gap: 12px;
+    }
+    .note{
+      margin-top: 12px;
+      text-align:center;
+      font-size: 13px;
+      color: color-mix(in srgb, var(--muted) 90%, transparent);
+    }
+    .sr-only{
+      position:absolute; width:1px; height:1px; padding:0; margin:-1px; overflow:hidden; clip:rect(0,0,0,0); border:0;
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <div class="nav container">
+      <div class="brand" aria-label="GreenHomeLab 標誌">
+        <div class="logo" aria-hidden="true">
+          <img src="images/logo.png" alt="GreenHomeLab Logo" />
+        </div>
+        <span>GreenHomeLab</span>
+      </div>
+
+      <nav class="top" aria-label="主選單">
+        <a href="#home">首頁</a>
+        <a href="#catalog">品種瀏覽</a>
+        <a href="#guide">難度指南</a>
+        <a href="#about">關於我們</a>
+      </nav>
+    </div>
+  </header>
+
+  <main id="home" class="container">
+    <section class="hero" aria-labelledby="hero-title">
+      <h1 id="hero-title">把陽台變成你的微型菜園</h1>
+      <p>用「資料庫＋篩選工具」找到最適合你家環境的蔬果：日照、空間、澆水頻率、難度、採收期，一次搞定。</p>
+
+      <ul class="social-links" aria-label="社群媒體連結">
+        <li>
+          <a class="social-link" href="https://www.instagram.com/your-account" target="_blank" rel="noopener noreferrer">
+            <svg class="social-icon" viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/></svg>
+            Instagram
+          </a>
+        </li>
+        <li>
+          <a class="social-link" href="mailto:hello@yourdomain.com">
+            <span aria-hidden="true">✉️</span> 聯繫我們
+          </a>
+        </li>
+      </ul>
+
+      <div class="stats" aria-label="網站概況">
+        <div class="stat-item"><span class="stat-number" id="plant-count">0</span><div class="stat-label">品種數量</div></div>
+        <div class="stat-item"><span class="stat-number" id="category-count">0</span><div class="stat-label">分類種類</div></div>
+        <div class="stat-item"><span class="stat-number" id="easy-count">0</span><div class="stat-label">新手友善</div></div>
+        <div class="stat-item"><span class="stat-number">居家</span><div class="stat-label">可複製方法</div></div>
+      </div>
+
+      <nav class="quick-nav" aria-label="快速導航">
+        <a href="#catalog" class="quick-nav-item">
+          <div class="quick-nav-title">🔎 瀏覽品種</div>
+          <div class="quick-nav-desc">用篩選器找到適合你家的蔬果：日照、難度、採收期</div>
+        </a>
+        <a href="#guide" class="quick-nav-item">
+          <div class="quick-nav-title">⭐ 難度指南</div>
+          <div class="quick-nav-desc">新手/進階/高手：用一致標準挑選入門品種</div>
+        </a>
+        <a href="#about" class="quick-nav-item">
+          <div class="quick-nav-title">📚 種植筆記</div>
+          <div class="quick-nav-desc">土壤、介質、施肥、病蟲害與收成保存</div>
+        </a>
+      </nav>
+    </section>
+
+    <!-- Toolbar -->
+    <section class="toolbar" aria-label="篩選工具">
+      <div class="search-container">
+        <input id="q" type="search" class="search-input" placeholder="搜尋：番茄 / 羅勒 / 葉菜 / 關鍵字…" aria-label="搜尋品種" autocomplete="off" />
+        <svg class="search-icon" viewBox="0 0 16 16" aria-hidden="true"><path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z"/></svg>
+        <div id="search-suggestions" class="search-suggestions" aria-label="搜尋建議"></div>
+      </div>
+
+      <select id="difficulty" aria-label="種植難度">
+        <option value="">難度：不限</option>
+        <option value="1">★☆☆☆☆（新手）</option>
+        <option value="2">★★☆☆☆（新手）</option>
+        <option value="3">★★★☆☆</option>
+        <option value="4">★★★★☆</option>
+        <option value="5">★★★★★（進階）</option>
+      </select>
+
+      <select id="sun" aria-label="日照需求">
+        <option value="">日照：不限</option>
+        <option value="low">弱光（1–3 小時）</option>
+        <option value="medium">半日照（3–5 小時）</option>
+        <option value="high">全日照（5+ 小時）</option>
+      </select>
+
+      <select id="space" aria-label="空間需求">
+        <option value="">空間：不限</option>
+        <option value="small">小（窗台/小盆）</option>
+        <option value="medium">中（標準花盆）</option>
+        <option value="large">大（種植箱/地植）</option>
+      </select>
+
+      <button class="btn primary" type="button" id="helper-btn">
+        <span aria-hidden="true">🧭</span>
+        <span>選種小幫手</span>
+      </button>
+
+      <button class="chip" data-tag="適合室內" type="button" aria-pressed="false">適合室內</button>
+      <button class="chip" data-tag="快速採收" type="button" aria-pressed="false">快速採收</button>
+      <button class="chip" data-tag="可反覆採收" type="button" aria-pressed="false">可反覆採收</button>
+    </section>
+
+    <!-- Catalog -->
+    <section id="catalog" aria-label="品種資料庫">
+      <div class="category-tabs" role="tablist" aria-label="分類">
+        <button class="tab" type="button" data-category="" aria-selected="true">全部</button>
+        <button class="tab" type="button" data-category="葉菜" aria-selected="false">葉菜</button>
+        <button class="tab" type="button" data-category="果菜" aria-selected="false">果菜</button>
+        <button class="tab" type="button" data-category="香草" aria-selected="false">香草</button>
+        <button class="tab" type="button" data-category="根莖" aria-selected="false">根莖</button>
+      </div>
+
+      <div class="section-title">
+        <h2 id="section-title">全部品種</h2>
+        <div class="count" id="count">0 筆</div>
+      </div>
+
+      <div class="grid" id="grid" aria-live="polite"></div>
+    </section>
+
+    <!-- Guide -->
+    <section id="guide" class="guide-wrap" aria-label="難度星級指南">
+      <div class="section-title">
+        <h2>難度星級指南</h2>
+      </div>
+
+      <div class="guide-grid">
+        <div class="guide-card">
+          <h3>
+            <span>★☆☆☆☆ - ★★☆☆☆</span>
+            <span class="pill">新手推薦</span>
+          </h3>
+          <p>容錯率高、對日照／澆水要求相對寬鬆，適合第一次在家種菜。通常生長快，回饋感強。</p>
+        </div>
+
+        <div class="guide-card">
+          <h3>
+            <span style="color: var(--warn);">★★★☆☆ - ★★★★☆</span>
+            <span class="pill">進階</span>
+          </h3>
+          <p>需要更穩定的日照與水分管理，並留意通風、介質與施肥節奏。適合已有幾次成功經驗的你。</p>
+        </div>
+
+        <div class="guide-card">
+          <h3>
+            <span style="color: var(--danger);">★★★★★</span>
+            <span class="pill">高手向</span>
+          </h3>
+          <p>對溫度、病蟲害、授粉或環境條件較敏感，或週期較長。建議有紀錄習慣與調整能力的栽培者。</p>
+        </div>
+      </div>
+
+      <div class="note-card">
+        <h3 style="color: var(--brand);">評估標準</h3>
+        <ul>
+          <li>日照需求：是否必須全日照／是否能室內補光</li>
+          <li>水分管理：對缺水或積水的敏感度</li>
+          <li>介質與施肥：是否需要特定配方或頻繁追肥</li>
+          <li>病蟲害風險：是否容易遭遇蚜蟲、紅蜘蛛、白粉病等</li>
+          <li>空間與支撐：是否需要搭架、整枝或較大容器</li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- About -->
+    <section id="about" style="margin-top: 26px;" aria-label="關於我們">
+      <div class="section-title">
+        <h2>關於我們</h2>
+      </div>
+
+      <div class="note-card">
+        <p style="margin:0; color: var(--muted);">
+          GreenHomeLab 是一個「可實作」的居家栽培整理站：把零散的種植經驗整理成一致格式，
+          讓你用搜尋與篩選快速找到適合自己的蔬果。你可以把這份 HTML 當作模板，之後再把資料改成你的內容。
+        </p>
+      </div>
+    </section>
+  </main>
+
+  <footer class="container" aria-label="頁尾">
+    <div class="footer-row">
+      <div>© <span id="year"></span> GreenHomeLab. All rights reserved.</div>
+      <div style="display:flex; gap: 14px; font-size: 14px;">
+        <a href="mailto:hello@yourdomain.com">聯繫我們</a>
+        <a href="#guide">難度指南</a>
+        <a href="#about">關於我們</a>
+      </div>
+    </div>
+    <div class="note">本站內容僅供參考；實際栽培請依地區氣候、空間條件與安全用藥原則調整。</div>
+  </footer>
+
+  <!-- Modal -->
+  <div id="modal" class="modal" aria-hidden="true">
+    <div class="modal-content" role="dialog" aria-modal="true" aria-labelledby="modal-title">
+      <div class="modal-header">
+        <div>
+          <h2 class="modal-title" id="modal-title"></h2>
+          <p class="modal-subtitle" id="modal-subtitle"></p>
+        </div>
+        <button class="close-btn" id="close-modal" aria-label="關閉">&times;</button>
+      </div>
+      <div class="modal-body">
+        <img id="modal-image" class="modal-image" alt="" style="display:none;" />
+        <div>
+          <div class="modal-info" id="modal-info"></div>
+          <div class="modal-actions" id="modal-actions"></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Card Template -->
+  <template id="card-tpl">
+    <article class="card" data-category="" data-tags="">
+      <div class="thumb" aria-hidden="true">
+        <span class="badge"></span>
+        <div class="ph">待補圖片</div>
+      </div>
+
+      <div class="card-body">
+        <div class="latin"></div>
+        <div class="cn"></div>
+        <div class="meta"></div>
+
+        <div class="row sun"></div>
+        <div class="row water"></div>
+        <div class="row diff"></div>
+
+        <div class="buy">
+          <button class="btn" type="button">查看詳情</button>
+          <a class="btn secondary" href="#guide">看難度</a>
+        </div>
+      </div>
+    </article>
+  </template>
+
+  <script type="module">
+    // ====== Demo data (你可以改成 fetch JSON / 後台資料) ======
+    const PLANTS = [
+      {
+        id: "basil",
+        latin: "Ocimum basilicum",
+        name: "羅勒",
+        category: "香草",
+        tags: ["適合室內", "可反覆採收"],
+        difficulty: 1,
+        sun: "medium",
+        space: "small",
+        water: "表土乾再澆，避免長期積水",
+        harvest: "約 30–60 天可開始採收嫩葉",
+        tips: "勤摘心促分枝；室內要通風，避免白粉病。",
+        image: "" // 例如: "images/basil.jpg"
+      },
+      {
+        id: "lettuce",
+        latin: "Lactuca sativa",
+        name: "生菜（葉萵苣）",
+        category: "葉菜",
+        tags: ["快速採收", "適合室內"],
+        difficulty: 1,
+        sun: "low",
+        space: "small",
+        water: "保持介質微濕，避免忽乾忽濕",
+        harvest: "約 25–45 天可採收",
+        tips: "夏季易抽苔；可選耐熱品種並提高遮陰。",
+        image: ""
+      },
+      {
+        id: "cherry-tomato",
+        latin: "Solanum lycopersicum var. cerasiforme",
+        name: "小番茄",
+        category: "果菜",
+        tags: ["可反覆採收"],
+        difficulty: 3,
+        sun: "high",
+        space: "large",
+        water: "固定節奏澆水，避免忽乾忽濕造成裂果",
+        harvest: "約 70–110 天（視品種）",
+        tips: "需支架與整枝；室內需補光與授粉（震動花序）。",
+        image: ""
+      },
+      {
+        id: "radish",
+        latin: "Raphanus sativus",
+        name: "蘿蔔（小根蘿蔔）",
+        category: "根莖",
+        tags: ["快速採收"],
+        difficulty: 2,
+        sun: "medium",
+        space: "medium",
+        water: "保持均勻濕度，避免木質化或裂根",
+        harvest: "約 25–55 天",
+        tips: "盆深要夠；氮肥過多易長葉不長根。",
+        image: ""
+      }
+    ];
+
+    // ====== Helpers ======
+    const $ = (s, el = document) => el.querySelector(s);
+    const $$ = (s, el = document) => Array.from(el.querySelectorAll(s));
+
+    const state = {
+      q: "",
+      difficulty: "",
+      sun: "",
+      space: "",
+      category: "",
+      tags: new Set()
+    };
+
+    const elGrid = $("#grid");
+    const elCount = $("#count");
+    const elSectionTitle = $("#section-title");
+
+    // Stats
+    $("#plant-count").textContent = String(PLANTS.length);
+    $("#category-count").textContent = String(new Set(PLANTS.map(p => p.category)).size);
+    $("#easy-count").textContent = String(PLANTS.filter(p => p.difficulty <= 2).length);
+    $("#year").textContent = String(new Date().getFullYear());
+
+    function diffStars(n){
+      const full = "★".repeat(n);
+      const empty = "☆".repeat(5 - n);
+      return `${full}${empty}`;
+    }
+
+    function sunLabel(v){
+      return v === "low" ? "弱光（1–3 小時）" : v === "medium" ? "半日照（3–5 小時）" : "全日照（5+ 小時）";
+    }
+    function spaceLabel(v){
+      return v === "small" ? "小（窗台/小盆）" : v === "medium" ? "中（標準花盆）" : "大（種植箱/地植）";
+    }
+
+    function applyFilters(items){
+      return items.filter(p => {
+        const q = state.q.trim().toLowerCase();
+        const matchQ = !q || (p.name + " " + p.latin + " " + p.category + " " + p.tags.join(" ")).toLowerCase().includes(q);
+        const matchDiff = !state.difficulty || String(p.difficulty) === state.difficulty;
+        const matchSun = !state.sun || p.sun === state.sun;
+        const matchSpace = !state.space || p.space === state.space;
+        const matchCategory = !state.category || p.category === state.category;
+        const matchTags = state.tags.size === 0 || Array.from(state.tags).every(t => p.tags.includes(t));
+        return matchQ && matchDiff && matchSun && matchSpace && matchCategory && matchTags;
+      });
+    }
+
+    function render(){
+      const filtered = applyFilters(PLANTS);
+
+      // Update title & count
+      elSectionTitle.textContent = state.category ? `${state.category}｜品種` : "全部品種";
+      elCount.textContent = `${filtered.length} 筆`;
+
+      // Grid
+      elGrid.innerHTML = "";
+      const tpl = $("#card-tpl");
+
+      filtered.forEach(p => {
+        const node = tpl.content.firstElementChild.cloneNode(true);
+        node.dataset.category = p.category;
+        node.dataset.tags = p.tags.join(",");
+
+        const thumb = $(".thumb", node);
+        const badge = $(".badge", node);
+        badge.textContent = p.category;
+
+        if (p.image){
+          thumb.innerHTML = `<span class="badge">${p.category}</span><img loading="lazy" src="${p.image}" alt="${p.name} 圖片">`;
+        }
+
+        $(".latin", node).textContent = p.latin;
+        $(".cn", node).textContent = p.name;
+        $(".meta", node).textContent = `採收期：${p.harvest}`;
+
+        $(".row.sun", node).innerHTML = `<b>日照：</b>${sunLabel(p.sun)}　<b>空間：</b>${spaceLabel(p.space)}`;
+        $(".row.water", node).innerHTML = `<b>澆水：</b>${p.water}`;
+        $(".row.diff", node).innerHTML = `<b>難度：</b>${diffStars(p.difficulty)}`;
+
+        // CTA
+        const btnDetail = $(".buy .btn", node);
+        btnDetail.addEventListener("click", () => openModal(p));
+
+        elGrid.appendChild(node);
+      });
+
+      // Suggestions (very simple demo)
+      const sugBox = $("#search-suggestions");
+      const q = state.q.trim().toLowerCase();
+      if (!q){
+        sugBox.style.display = "none";
+        sugBox.innerHTML = "";
+      } else {
+        const hits = PLANTS
+          .map(p => p.name)
+          .filter(name => name.toLowerCase().includes(q))
+          .slice(0, 6);
+
+        if (hits.length === 0){
+          sugBox.style.display = "none";
+          sugBox.innerHTML = "";
+        } else {
+          sugBox.style.display = "block";
+          sugBox.innerHTML = hits.map(h => `<div class="suggestion" data-value="${h}">${h}</div>`).join("");
+          $$(".suggestion", sugBox).forEach(item => {
+            item.addEventListener("click", () => {
+              $("#q").value = item.dataset.value;
+              state.q = item.dataset.value;
+              sugBox.style.display = "none";
+              render();
+            });
+          });
+        }
+      }
+    }
+
+    // ====== Modal ======
+    const modal = $("#modal");
+    const closeBtn = $("#close-modal");
+
+    function openModal(p){
+      $("#modal-title").textContent = p.name;
+      $("#modal-subtitle").textContent = `${p.latin}｜分類：${p.category}`;
+
+      const info = `
+        <div><b style="color: var(--text);">難度：</b> ${diffStars(p.difficulty)}</div>
+        <div style="margin-top:8px;"><b style="color: var(--text);">日照：</b> ${sunLabel(p.sun)}</div>
+        <div style="margin-top:8px;"><b style="color: var(--text);">空間：</b> ${spaceLabel(p.space)}</div>
+        <div style="margin-top:8px;"><b style="color: var(--text);">澆水：</b> ${p.water}</div>
+        <div style="margin-top:8px;"><b style="color: var(--text);">採收期：</b> ${p.harvest}</div>
+        <div style="margin-top:8px;"><b style="color: var(--text);">小技巧：</b> ${p.tips}</div>
+        <div style="margin-top:10px;"><b style="color: var(--text);">標籤：</b> ${p.tags.map(t => `<span class="pill" style="margin-right:6px;">${t}</span>`).join("")}</div>
+      `;
+      $("#modal-info").innerHTML = info;
+
+      const actions = $("#modal-actions");
+      actions.innerHTML = "";
+      const btn = document.createElement("a");
+      btn.className = "btn primary";
+      btn.href = "#guide";
+      btn.textContent = "查看難度與種植原則";
+      actions.appendChild(btn);
+
+      const img = $("#modal-image");
+      if (p.image){
+        img.src = p.image;
+        img.alt = `${p.name} 圖片`;
+        img.style.display = "block";
+      } else {
+        img.style.display = "none";
+        img.removeAttribute("src");
+        img.alt = "";
+      }
+
+      modal.setAttribute("aria-hidden", "false");
+      document.body.style.overflow = "hidden";
+      closeBtn.focus();
+    }
+
+    function closeModal(){
+      modal.setAttribute("aria-hidden", "true");
+      document.body.style.overflow = "";
+    }
+
+    closeBtn.addEventListener("click", closeModal);
+    modal.addEventListener("click", (e) => {
+      if (e.target === modal) closeModal();
+    });
+    window.addEventListener("keydown", (e) => {
+      if (e.key === "Escape" && modal.getAttribute("aria-hidden") === "false") closeModal();
+    });
+
+    // ====== UI Bindings ======
+    $("#q").addEventListener("input", (e) => { state.q = e.target.value; render(); });
+    $("#difficulty").addEventListener("change", (e) => { state.difficulty = e.target.value; render(); });
+    $("#sun").addEventListener("change", (e) => { state.sun = e.target.value; render(); });
+    $("#space").addEventListener("change", (e) => { state.space = e.target.value; render(); });
+
+    $$(".tab").forEach(tab => {
+      tab.addEventListener("click", () => {
+        $$(".tab").forEach(t => t.setAttribute("aria-selected", "false"));
+        tab.setAttribute("aria-selected", "true");
+        state.category = tab.dataset.category || "";
+        render();
+      });
+    });
+
+    $$(".chip").forEach(chip => {
+      chip.addEventListener("click", () => {
+        const tag = chip.dataset.tag;
+        const pressed = chip.getAttribute("aria-pressed") === "true";
+        chip.setAttribute("aria-pressed", String(!pressed));
+        if (pressed) state.tags.delete(tag);
+        else state.tags.add(tag);
+        render();
+      });
+    });
+
+    // 小幫手（示範：根據目前篩選狀態給提示）
+    $("#helper-btn").addEventListener("click", () => {
+      const hints = [];
+      if (!state.sun) hints.push("先選「日照」：這通常是最關鍵的限制條件。");
+      if (!state.space) hints.push("再選「空間」：窗台小盆適合香草與葉菜。");
+      if (!state.difficulty) hints.push("新手建議先從 ★～★★ 開始，成功率更高。");
+      if (hints.length === 0) hints.push("很好！你已經把條件選齊，接下來看卡片採收期與小技巧。");
+
+      openModal({
+        name: "選種小幫手",
+        latin: "GreenHomeLab Helper",
+        category: "工具",
+        tags: ["快速上手"],
+        difficulty: 1,
+        sun: state.sun || "medium",
+        space: state.space || "small",
+        water: "以介質狀態為準：表土乾再澆，避免積水。",
+        harvest: "依品種而異（葉菜通常最快）",
+        tips: hints.join(" "),
+        image: ""
+      });
+    });
+
+    render();
+  </script>
+
+  <!-- Google Analytics (可選；記得替換 G-XXXXXXX) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=GA_MEASUREMENT_ID"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'GA_MEASUREMENT_ID');
+  </script>
+</body>
+</html>
